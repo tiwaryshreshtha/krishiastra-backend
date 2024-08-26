@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Management System</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #e0f7fa;
+            margin: 0;
+            flex-direction: column;
+        }
+        h1 {
+            margin-bottom: 30px;
+            font-size: 36px;
+            color: #00695c;
+        }
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        button {
+            padding: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            background-color: #00796b;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <h1>Crop Management System</h1>
+    <div class="button-container">
+        <button onclick="location.href='/thermal_surveillance'">Thermal Surveillance</button>
+        <button onclick="location.href='/et_sensing'">Intelligent ET Sensing</button>
+        <button onclick="location.href='/irrigation_accounting'">Irrigation Water Accounting</button>
+        <button onclick="location.href='/crop_recommendation'">Crop Recommendation</button>
+        <button onclick="location.href='/upload'">Crop Disease Detection</button>
+        <button onclick="location.href='/fertilizer_recommendation'">Fertilizer Recommendation</button>
+    </div>
+</body>
+</html>

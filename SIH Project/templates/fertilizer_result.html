@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fertilizer Recommendation Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+        .result-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            padding: 30px;
+            max-width: 500px;
+            margin-top: 50px;
+        }
+        h2 {
+            color: #27ae60;
+            font-size: 24px;
+        }
+        .fertilizer-name {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 20px 0;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #27ae60;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #2ecc71;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h2>Recommended Fertilizer</h2>
+        <div class="fertilizer-name">{{ fertilizer_name }}</div>
+        <a href="/fertilizer_recommendation" class="back-button">Back to Fertilizer Recommendation</a>
+    </div>
+</body>
+</html>
