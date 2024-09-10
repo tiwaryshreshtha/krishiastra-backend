@@ -1,0 +1,448 @@
+
+<!--
+<body>
+    <h1>Crop Management System</h1>
+    <div class="button-container">
+        <button onclick="location.href='/thermal_surveillance'">Thermal Surveillance</button>
+        <button onclick="location.href='/et_sensing'">Intelligent ET Sensing</button>
+        <button onclick="location.href='/irrigation_accounting'">Irrigation Water Accounting</button>
+        <button onclick="location.href='/crop_recommendation'">Crop Recommendation</button>
+        <button onclick="location.href='/upload'">Crop Disease Detection</button>
+        <button onclick="location.href='/fertilizer_recommendation'">Fertilizer Recommendation</button>
+    </div>
+</body>
+</html>-->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone Agriculture Disease Detection</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Custom CSS -->
+    <style>
+        
+        h1 {
+            margin-bottom: 30px;
+            font-size: 36px;
+            color: #00695c;
+        }
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        button {
+            padding: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            background-color: #00796b;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #004d40;
+        }
+        body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background-color: #007bff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.nav-link {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-left: 15px;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    background: url('hero-background.jpg') no-repeat center center/cover;
+    height: 70vh;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero h1, .hero p {
+    z-index: 2;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+.hero .btn {
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 12px 30px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s;
+}
+
+.hero .btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Section Styles */
+.section {
+    padding: 60px 0;
+    text-align: center; /* Center-align all content in sections */
+}
+
+.section h1 {
+    font-size: 2.2rem;
+    color: #007bff;
+    margin-bottom: 30px;
+}
+
+.section p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Service Section */
+#services .service-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+#services .service-box {
+    background-color: #ffffff;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 250px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#services .service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+#services .service-box h2 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+#services .service-box p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Contact Form Styles */
+#contact form {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* Center the form horizontally */
+    max-width: 600px; /* Limit form width */
+}
+
+#contact .form-group {
+    margin-bottom: 20px;
+}
+
+#contact label {
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+}
+
+#contact input, #contact textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#contact button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s;
+}
+
+#contact button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 1.5rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero .btn {
+        font-size: 1rem;
+        padding: 8px 20px;
+    }
+
+    .section h1 {
+        font-size: 1.8rem;
+    }
+
+    .service-box {
+        padding: 15px;
+    }
+
+    .service-box h2 {
+        font-size: 1.4rem;
+    }
+
+    .service-box p {
+        font-size: 0.9rem;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+    <header class="bg-primary text-white py-4 d-flex align-items-center animate__animated animate__fadeInDown">
+        <div class="logo">
+            <img src="logo1.jpg" alt="Krishiastra Logo" class="animate__animated animate__zoomIn">
+        </div>
+        <div class="header-title animate__animated animate__fadeInLeft">
+            Drone Agriculture Disease Detection
+        </div>
+        <nav class="ml-auto animate__animated animate__fadeInRight">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#home"><img src="https://img.icons8.com/ios-filled/50/ffffff/home.png" alt="Home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#about"><img src="https://img.icons8.com/ios-filled/50/ffffff/info.png" alt="About">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#services"><img src="https://img.icons8.com/ios-filled/50/ffffff/services.png" alt="Services">Services</a></li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#technology"><img src="https://img.icons8.com/ios-filled/50/ffffff/gear.png" alt="Technology">Technology</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#case-studies"><img src="https://img.icons8.com/ios-filled/50/ffffff/briefcase.png" alt="Case Studies">Case Studies</a></li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#blog"><img src="https://img.icons8.com/ios-filled/50/ffffff/blog.png" alt="Blog">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#contact"><img src="https://img.icons8.com/ios-filled/50/ffffff/contacts.png" alt="Contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero animate__animated animate__fadeIn">
+        <div class="container text-center">
+            <img src="logo1.jpg" alt="Krishiastra Logo" class="animate__animated animate__zoomIn">
+            <h1 class="animate__animated animate__fadeInUp">Revolutionizing Agriculture with Drone Technology</h1>
+            <p class="animate__animated animate__fadeInUp">Early detection of crop diseases for better yields and healthier crops.</p>
+            <a href="#services" class="btn btn-success mt-4 animate__animated animate__bounceIn animate__delay-2s">Explore Our Services</a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h1 class="animate__animated animate__slideInLeft">About Us</h1>
+            <div class="content animate__animated animate__fadeIn">
+                <p>Our mission is to empower farmers with the latest drone technology to detect crop diseases early, ensuring healthy crops and better yields. We provide advanced surveillance systems, data analytics, and real-time monitoring to help farmers optimize their productivity.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section bg-light">
+        <div class="container">
+            <h1 class="animate__animated animate__slideInRight">Our Services</h1>
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="service-box animate__animated animate__zoomIn">
+                        <button onclick="location.href='/crop_recommendation'">Crop Recommendation</button>
+                        <p>Crop Recommendation System for recommending best crops to harvest.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="service-box animate__animated animate__zoomIn">
+                        <button onclick="location.href='/fertilizer_recommendation'">Fertilizer Recommendation</button>
+                        <p>Fertilizer Recommendation System is used for recommending best fertilizer.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="service-box animate__animated animate__zoomIn">
+                        <button onclick="location.href='/upload'">Crop Disease Detection</button>
+                        <p>Advanced data processing and reporting to provide disease insights of the crop.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="service-box animate__animated animate__zoomIn">
+                        <button onclick="location.href='/et_sensing'">Intelligent ET Sensing</button>
+                        <p>Tailored technology solution to meet the specific needs of your farm.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="service-box animate__animated animate__zoomIn">
+                        <button onclick="location.href='/thermal_surveillance'">Thermal Surveillance</button>
+                        <p>Monitoring various stages of crop growth including seeding, sowing, harvest, and disease detection.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="service-box animate__animated animate__zoomIn">
+                        <button onclick="location.href='/real_surveillance'">Real-Time Surveillance</button>
+                        <p>Real-time Thermal Surveillance and image capturing from drones to monitor crops and irrigation systems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="technology" class="section">
+        <div class="container">
+            <h1 class="animate__animated animate__slideInLeft">Our Technology</h1>
+            <div class="content animate__animated animate__fadeIn">
+                <p>We combine cutting-edge drone technology with advanced sensors and data analysis tools to provide early detection of crop diseases. Our technology includes high-resolution imaging, AI-driven analytics, and real-time reporting to ensure you have the information you need to protect your crops.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="case-studies" class="section bg-light">
+        <div class="container">
+            <h1 class="animate__animated animate__slideInRight">Case Studies</h1>
+            <div class="content animate__animated animate__fadeIn">
+                <p>Explore our success stories and see how our technology has helped farmers improve their yields and protect their crops from diseases.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="section">
+        <div class="container">
+            <h1 class="animate__animated animate__slideInLeft">Blog</h1>
+            <div class="content animate__animated animate__fadeIn">
+                <p>Stay updated with the latest in drone technology and agricultural disease detection. (Content for blog posts will go here)</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <h1 class="animate__animated animate__slideInRight">Contact Us</h1>
+            <form action="#" method="post" class="animate__animated animate__fadeInUp">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" class="form-control" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-success animate__animated animate__pulse">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="text-white text-center py-4 bg-dark">
+        <p>&copy; 2024 Drone Agriculture Disease Detection. All rights reserved.</p>
+    </footer>
+
+    <!-- jQuery, Popper.js, and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
